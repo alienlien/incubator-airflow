@@ -793,7 +793,7 @@ class SchedulerJob(BaseJob):
             self.logger.info("Examining DAG run {}".format(run))
             # don't consider runs that are executed in the future
             if run.execution_date > datetime.now():
-                self.logging.error("Execution date is in future: {}"
+                self.logger.error("Execution date is in future: {}"
                                    .format(run.execution_date))
                 continue
 
